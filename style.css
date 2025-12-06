@@ -10,10 +10,6 @@ body {
     background: linear-gradient(to right, #f9f4b3, #f3b9a6, #f7c5e6);
 }
 
-/* ===========================
-      NAVBAR DEFAULT (DESKTOP)
-   =========================== */
-
 .nav-container {
     width: 100%;
     background-color: #f56f6f;
@@ -34,7 +30,6 @@ body {
     display: none;
 }
 
-/* Hamburger hidden on desktop */
 .hamburger {
     display: none;
 }
@@ -57,9 +52,7 @@ body {
     cursor: pointer;
 }
 
-/* ===========================
-      FIRST SECTION
-   =========================== */
+
 
 .body-container {
     width: 100%;
@@ -107,9 +100,6 @@ body {
     object-fit: cover;
 }
 
-/* ===========================
-      SECOND SECTION
-   =========================== */
 
 .second-container {
     display: flex;
@@ -165,9 +155,7 @@ body {
     font-size: 24px;
 }
 
-/* ========================================================
-      MOBILE + TABLET NAVBAR (INSIDE SAME CONTAINER)
-======================================================== */
+
 @media (max-width: 768px) {
 
     /* Show hamburger */
@@ -276,9 +264,7 @@ body {
     }
 }
 
-/* ========================================================
-      TABLET (426px–768px)
-======================================================== */
+      /* TABLET (426px–768px) */
 @media (min-width: 426px) and (max-width: 768px) {
 
     .left-body {
@@ -312,12 +298,8 @@ body {
     }
 }
 
-/* ========================================================
-      LAPTOP (769px–1024px)
-======================================================== */
-/* ========================================================
-      LAPTOP (769px–1024px) — FIXED & IMPROVED
-======================================================== */
+
+      /* LAPTOP (769px–1024px) — FIXED & IMPROVED */
 @media (min-width: 769px) and (max-width: 1024px) {
 
     .body-container {
