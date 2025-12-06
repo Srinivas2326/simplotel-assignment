@@ -385,7 +385,7 @@ body {
 /* ========================================================
       DESKTOP LARGE (min-width: 1024px)
 ======================================================== */
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
 
     /* FIRST SECTION */
     .body-container {
