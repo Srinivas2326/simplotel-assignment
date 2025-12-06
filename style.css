@@ -29,7 +29,7 @@ body {
     position: relative;
 }
 
-/* Checkbox hidden */
+/* Hidden checkbox */
 .menu-toggle {
     display: none;
 }
@@ -41,16 +41,13 @@ body {
 
 .hamburger img {
     width: 28px;
-    height: auto;
     cursor: pointer;
 }
 
-/* Desktop nav list */
+/* Desktop nav links */
 .nav-links {
     list-style: none;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     gap: 20px;
     font-size: 20px;
     font-weight: 600;
@@ -98,7 +95,6 @@ body {
     cursor: pointer;
 }
 
-/* RIGHT IMAGE */
 .right-body {
     width: 50%;
     height: 100vh;
@@ -170,61 +166,75 @@ body {
 }
 
 /* ========================================================
-      MOBILE (320px–425px)
-   ======================================================== */
-@media (max-width: 426px) {
+      MOBILE + TABLET NAVBAR (INSIDE SAME CONTAINER)
+======================================================== */
+@media (max-width: 768px) {
 
-    /* NAVBAR */
+    /* Show hamburger */
     .hamburger {
         display: block;
+        cursor: pointer;
+        margin-left: auto;
     }
 
     .hamburger img {
-        width: 24px;
+        width: 26px;
     }
 
+    /* Navbar becomes a vertical expanding box */
     .nav-bar {
-        padding: 0 20px;
-        justify-content: space-between;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 65px;
-        left: 0;
         width: 100%;
-        background: #f56f6f;
+        padding: 15px 20px;
         flex-direction: column;
-        gap: 15px;
-        padding: 20px 0;
-        display: none;
+        align-items: flex-start;
     }
 
+    /* Hide nav links initially */
+    .nav-links {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    /* Show nav links INSIDE navbar (expand height) */
     .menu-toggle:checked ~ .nav-links {
         display: flex;
     }
 
-    /* Section 1 - Image First */
+    .nav-container {
+        padding: 15px 0;
+    }
+
+    .nav-links li {
+        font-size: 20px;
+        padding-left: 5px;
+    }
+
+    /* FIRST SECTION MOBILE */
     .body-container {
         flex-direction: column;
         height: auto;
     }
 
     .right-body {
-        width: 100%;
-        height: 260px;
         order: 1;
+        width: 100%;
+        height: auto;
     }
 
     .right-body img {
         width: 100%;
-        height: 100%;
+        height: auto;
     }
 
     .left-body {
+        order: 2;
         width: 100%;
         padding: 20px;
-        order: 2;
+        gap: 20px;
     }
 
     .left-body h1 {
@@ -241,16 +251,17 @@ body {
         width: 100%;
     }
 
-    /* SECTION 2 */
+    /* SECOND SECTION MOBILE */
     .second-container {
         flex-direction: column;
         height: auto;
         padding: 20px;
+        gap: 20px;
     }
 
     .second-left {
-        grid-template-columns: 1fr;
         width: 100%;
+        grid-template-columns: 1fr;
     }
 
     .second-left img,
@@ -267,69 +278,11 @@ body {
 
 /* ========================================================
       TABLET (426px–768px)
-   ======================================================== */
-/* ========================================================
-      TABLET (426px–768px) — FIXED VERSION
-   ======================================================== */
+======================================================== */
 @media (min-width: 426px) and (max-width: 768px) {
 
-    /* NAVBAR */
-    .hamburger {
-        display: block;
-    }
-
-    .hamburger img {
-        width: 26px;
-    }
-
-    .nav-bar {
-        justify-content: space-between;
-        padding: 0 20px;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #f56f6f;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 0;
-        display: none;
-        z-index: 999;
-    }
-
-    .menu-toggle:checked ~ .nav-links {
-        display: flex;
-    }
-
-    /* FIRST SECTION */
-    .body-container {
-        flex-direction: column; 
-        height: auto;           /* FIX: remove forced height */
-        padding: 0;
-        gap: 20px;
-    }
-
-    /* IMAGE FIRST */
-    .right-body {
-        order: 1;
-        width: 100%;
-        height: auto;          /* FIX */
-    }
-
-    .right-body img {
-        width: 100%;
-        height: auto;          /* FIX: responsive image */
-        object-fit: cover;
-    }
-
-    /* TEXT SECOND */
     .left-body {
-        order: 2;
-        width: 100%;
-        padding: 30px 20px;    /* FIX: reduce spacing */
+        padding: 30px 20px;
         gap: 20px;
     }
 
@@ -340,138 +293,54 @@ body {
 
     .left-body pre {
         font-size: 16px;
-        white-space: normal;   /* FIX: prevent overflow */
         line-height: 1.5;
-        text-align: center;
     }
 
     .click-me {
         width: 60%;
         align-self: center;
         height: 48px;
-        font-size: 16px;
     }
 
-    /* SECOND SECTION */
     .second-container {
-        flex-direction: column;
-        height: auto;
-        gap: 30px;
         padding: 20px;
+        gap: 30px;
     }
 
     .second-left {
-        width: 100%;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .second-left img {
-        height: 200px;
-    }
-
-    .second-left img:nth-child(2) {
-        height: 410px;
-    }
-
-    .second-right {
-        width: 100%;
-        text-align: center;
-        padding: 30px 20px;
-    }
-
-    .second-right h2 {
-        font-size: 32px;
-        line-height: 40px;
-    }
-
-    .click-box {
-        justify-content: center;
     }
 }
 
-
 /* ========================================================
       LAPTOP (769px–1024px)
-   ======================================================== */
-/* ========================================================
-      LAPTOP (769px–1024px) — FIXED VERSION
-   ======================================================== */
+======================================================== */
 @media (min-width: 769px) and (max-width: 1024px) {
 
-    /* FIRST SECTION */
     .body-container {
-        height: auto;              /* FIX: no forced height */
-        display: flex;
+        height: auto;
         padding: 20px 0;
     }
 
     .left-body {
         width: 50%;
-        padding: 60px 30px;        /* FIX: reduce heavy spacing */
+        padding: 60px 30px;
         gap: 30px;
     }
 
-    .left-body h1 {
-        font-size: 42px;           /* slightly smaller */
-        letter-spacing: 3px;
-    }
-
-    .left-body pre {
-        font-size: 16px;
-        line-height: 1.4;
-    }
-
-    .click-me {
-        width: 200px;
-        height: 45px;
-    }
-
-    /* RIGHT SECTION IMAGE */
-    .right-body {
-        width: 50%;
-        height: auto;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-    }
-
     .right-body img {
-        width: 100%;               /* FIX: full width image */
-        height: auto;              /* FIX: maintain aspect ratio */
+        width: 100%;
+        height: auto;
         object-fit: cover;
     }
 
-    /* SECOND SECTION */
     .second-container {
         height: auto;
         padding: 40px 0;
         gap: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .second-left {
         grid-template-columns: 200px 200px;
-        gap: 15px;
-    }
-
-    .second-left img {
-        height: 200px;
-    }
-
-    .second-left img:nth-child(2) {
-        height: 415px;
-    }
-
-    .second-right {
-        width: 380px;
-        padding: 35px;
-    }
-
-    .second-right h2 {
-        font-size: 30px;
-        line-height: 38px;
     }
 }
